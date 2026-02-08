@@ -1,65 +1,89 @@
+import { Amiri_Quran } from "next/font/google";
+import './globals.css';
 import Image from "next/image";
+import About from "./about";
+import Service from "./service";
+import Style from "./style";
+import Footer from "./footer";
+import Header from "./components/Header";
+
+const amiri = Amiri_Quran({
+  weight: "400",
+  subsets: ["arabic"],
+  variable: "--font-amiri",
+});
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Header />
+
+      <main className="relative  flex items-center justify-center bg-[#09090b] overflow-hidden px-6 pt-20">
+        
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-zinc-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-zinc-700/5 blur-[100px] rounded-full pointer-events-none" />
+
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          
+          <div className="lg:col-span-5 flex flex-col gap-6 order-2 lg:order-1">
+            <div className="space-y-2">
+              <span className="text-zinc-500 text-sm uppercase tracking-[0.3em] font-medium">Ace of Hummingbird</span>
+              <h1 className={`${amiri.variable} font-amiri text-7xl md:text-8xl text-white leading-tight`}>
+                Jahyeon Jo
+              </h1>
+            </div>
+            
+            <p className="text-zinc-400 text-lg md:text-xl leading-relaxed max-w-lg border-l border-zinc-800 pl-6">
+              A junior at Sunny High School and former student council president. 
+              Known as the silent ace of the <span className="text-white">Humming Bird Crew</span>, 
+              redefining the thrill of the street.
+            </p>
+
+            <div className="flex gap-4 pt-4">
+              <button className="px-8 py-4 bg-zinc-100 hover:bg-white text-black font-bold rounded-2xl transition-all active:scale-95">
+                Explore Crew
+              </button>
+              <button className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl transition-all">
+                View Style
+              </button>
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 flex justify-center relative order-1 lg:order-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent z-10 h-full w-full" />
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/Image/jayjo.png"
+              alt="Jay Jo"
+              width={450}
+              height={600}
+              className="object-contain hover:scale-105 transition-transform duration-700 grayscale-[20%] hover:grayscale-0"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          <div className="lg:col-span-3 hidden lg:flex flex-col justify-center items-center gap-8 order-3">
+             <div className="p-4 bg-zinc-900/50 backdrop-blur-md border border-white/5 rounded-[2rem] rotate-3 hover:rotate-0 transition-all duration-500 shadow-2xl">
+                <Image
+                  src="/Image/breaker.png"
+                  alt="Breaker"
+                  width={280}
+                  height={350}
+                  className="object-contain rounded-2xl opacity-80"
+                />
+             </div>
+             <div className="text-center">
+                <p className="text-zinc-600 text-xs uppercase tracking-widest font-bold">Wind Breaker </p>
+                <div className="h-20 w-[1px] bg-gradient-to-b from-zinc-800 to-transparent mx-auto mt-4" />
+             </div>
+          </div>
+
         </div>
       </main>
-    </div>
+
+      <About />
+      <Service />
+      <Style />
+      <Footer />
+    </>
   );
 }
