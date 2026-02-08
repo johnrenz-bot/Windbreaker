@@ -52,7 +52,7 @@ export default function Home() {
           <div className="lg:col-span-4 flex justify-center relative order-1 lg:order-2">
             <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent z-10 h-full w-full" />
             <Image
-              src="/Image/jayjo.png"
+              src="/image/jayjo.png"
               alt="Jay Jo"
               width={450}
               height={600}
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="lg:col-span-3 hidden lg:flex flex-col justify-center items-center gap-8 order-3">
              <div className="p-4 bg-zinc-900/50 backdrop-blur-md border border-white/5 rounded-[2rem] rotate-3 hover:rotate-0 transition-all duration-500 shadow-2xl">
                 <Image
-                  src="/Image/breaker.png"
+                  src="/image/breaker.png"
                   alt="Breaker"
                   width={280}
                   height={350}
